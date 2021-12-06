@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <?php include_once "include/head.php"?>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <!--<?php include_once "include/header.php" ?> -->
+  <br>
+  <br>
+
+  <main class="px-3">
+    <h1 class="neon" id="naslov" onclick="backIndex()">Ljekarne Hauska</h1>
+    <br>
+    <br>
+    <br>
+    <div class="container marketing">
+
+<!-- Three columns of text below the carousel -->
+<div class="row">
+  <div class="col-lg-6">
+  <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="green" class="bi bi-activity" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+</svg>
+    <h2>Ljekarnička jedinica I</h2>
+    <p>Sv.L.B.Mandića 206, 31000 Osijek  </p>
+    <p>Tel: 031/ 280 222</p>
+    <p>Radno vrijeme: Pon - Pet 07:30 - 20:00 Subota 08:00 - 13:00</p>
+    <p class="btn btn-secondary" id="GPS1">Saznaj više &raquo;</p>
+  </div><!-- /.col-lg-4 -->
+  <br>
+  <div class="col-lg-6">
+    <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="green" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg>
+    <h2>Ljekarnička jedinica II</h2>
+    <p>Kralja Petra Svačića 6b, 31000 Osijek  </p>
+    <p>Tel: 031/ 573 414</p>
+    <p>Radno vrijeme: Pon - Pet 08:00 - 20:00 Subota 08:00 - 13:00</p>
+    <p class="btn btn-secondary" id="GPS2">Saznaj više &raquo;</p>
+  </div><!-- /.col-lg-4 -->
+  <br>
+</div><!-- /.row -->
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modalGPS">
+              <span class="close">&times;</span>
+              <p><strong>Ljekarnička jedinica I</strong></p>
+              <p>Sv.L.B.Mandića 206, 31000 Osijek</p>
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=sv.l.b.mandi%C4%87a,osjiek&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>    
+                </div>
+            </div>
+            </div>
+
+          </div>
+          <!-- The Modal -->
+          <div id="myModal2" class="modal2">
+            <!-- Modal content -->
+            <div class="modalGPS2">
+              <span class="close2">&times;</span>
+              <p><strong>Ljekarnička jedinica II</strong></p>
+              <p>Kralja Petra Svačića 6b, 31000 Osijek</p>
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Ul.%20kralja%20Petra%20Sva%C4%8Di%C4%87a%206b,%2031000,%20Osijek&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+              </div>
+            </div>
+            </div>
+
+          </div>
+  </div>  
+  </main>
+  <?php include_once "include/footer.php"?>
+  </body>
+</html>
