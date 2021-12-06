@@ -11,7 +11,11 @@
   <br>
 
   <main class="px-3">
+    <br>
     <h1 class="neon" id="naslov" onclick="backIndex()">Ljekarne Hauska</h1>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -20,8 +24,8 @@
 <!-- Three columns of text below the carousel -->
 <div class="row">
   <div class="col-lg-6">
-  <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="green" class="bi bi-activity" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="green" class="bi bi-house-door" viewBox="0 0 16 16">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
 </svg>
     <h2>Ljekarnička jedinica I</h2>
     <p>Sv.L.B.Mandića 206, 31000 Osijek  </p>
@@ -31,8 +35,8 @@
   </div><!-- /.col-lg-4 -->
   <br>
   <div class="col-lg-6">
-    <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="green" class="bi bi-facebook" viewBox="0 0 16 16">
-  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="green" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 </svg>
     <h2>Ljekarnička jedinica II</h2>
     <p>Kralja Petra Svačića 6b, 31000 Osijek  </p>

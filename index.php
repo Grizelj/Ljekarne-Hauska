@@ -11,7 +11,11 @@
   <br>
 
   <main class="px-3">
-    <h1 class="neon" id="naslov">Ljekarne Hauska</h1>
+    <br>
+    <h1 class="neon" id="naslov" onclick="backIndex()">Ljekarne Hauska</h1>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
