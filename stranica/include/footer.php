@@ -9,5 +9,5 @@
   </footer>
 </div>
 <script>
-    <?php include_once "scripts.js"?>
-  </script>
+    <?php include_once "include/scripts.js"?>
+</script>

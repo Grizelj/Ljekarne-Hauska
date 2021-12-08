@@ -9,12 +9,9 @@
           <li><a href="../index.php" class="nav-link px-2 text-white">Ljekarne Hauska</a></li>
           <li><a href="naslovna.php" class="nav-link px-2 text-white">Naslovna</a></li>
           <li><a href="lijekovi.php" class="nav-link px-2 text-white">Lijekovi</a></li>
-          <li><a href="ispis.php" class="nav-link px-2 text-white">Ispis lijekova</a></li>     
+          <li><a href="ispis.php" class="nav-link px-2 text-white">Ispis lijekova</a></li> 
+          <li><a href="nadzornaPloca.php" class="nav-link px-2 text-white">Nadzorna ploča</a></li>        
         </ul>
-
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
 
         <div class="text-end">
           <button type="button" class="btn btn-outline-light me-2" id="loginBtn" onclick="login()">Login</button>

@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-    <?php include_once "include/head.php"?>
+  <head> 
+    <?php include_once "include/head.php"?>   
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
-    
+  <body class="d-flex h-100 text-center text-white bg-dark" onload='counter()'> 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <!--<?php include_once "include/header.php" ?> -->
   <br>
@@ -55,3 +54,5 @@
 </div>  
   </body>
 </html>
+
+

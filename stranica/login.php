@@ -31,6 +31,9 @@
   <body class="text-center"> 
         <main class="form-signin">
         <form>
+          <br>
+          <br>
+          <br>
             <img class="mb-4" src="img/Logo.png" alt="" width="100" height="70">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -43,10 +46,12 @@
             <label for="floatingPassword">Lozinka</label>
             </div>
             <div class="form-floating" id="formFloating">
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            </div>            
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>      
+            <input type="button" class="w-100 btn btn-lg btn-secondary" onclick="location.href='naslovna.php'" value="Povratak" />    
+            </div>  
+            
             <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y")?> Ljekarne Hauska</p>
         </form>
-        </main>  
+        </main> 
   </body>
 </html>

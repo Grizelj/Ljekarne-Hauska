@@ -2,5 +2,5 @@
     <p><?php echo date("Y")?> Ljekarne Hauska</p>
 </footer>
 <script>
-    <?php include_once "stranica/include/scripts.js"?>
+    <?php include_once "include/scripts.js"?>
 </script>

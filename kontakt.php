@@ -57,9 +57,8 @@
                 <div class="gmap_canvas">
                 <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=sv.l.b.mandi%C4%87a,osjiek&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>    
                 </div>
+              </div>
             </div>
-            </div>
-
           </div>
           <!-- The Modal -->
           <div id="myModal2" class="modal2">
