@@ -14,7 +14,7 @@
           <p class="btn btn-secondary" id="registerForm">Registriraj sada! &raquo;</p>
       </div>
       <div class="col-lg-4" style="text-align: center;">
-            <h2>Visitor counter: ( implementirati brojac za posjetitelje ) <span id="counter"></span></h2>
+            <h2 onload="setCount()">Visitor counter: <span id="counter"></span></h2>
       </div>
   </div>
   </div>
@@ -38,7 +38,7 @@
                     <input type="password"  placeholder="Lozinka" name="lozinka">
                 </div>
                 <div>
-                    <button type="submit" name="register" id="reg_btn">Registriraj!</button>
+                    <button class="btn btn-secondary" type="submit" name="register" id="reg_btn">Registriraj!</button>
                 </div>
                 </form>           
             </div>

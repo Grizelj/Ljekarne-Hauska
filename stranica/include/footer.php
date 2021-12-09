@@ -10,4 +10,5 @@
 </div>
 <script>
     <?php include_once "include/scripts.js"?>
+    <?php include_once "../include/scripts.js"?>
 </script>

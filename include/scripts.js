@@ -52,3 +52,15 @@ window.onclick = function(event) {
     modal2.style.display = "none";
   }
 }
+
+var count = 0;
+var counterEle = document.getElementById("counter");
+function counter(){
+  count++;
+  console.log(count);
+}
+
+function setCount(){
+  
+  counterEle.innerHTML = count;
+}

@@ -35,11 +35,6 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   });
 
-let count = 0;
-document.getElementById("counter").innerHTML = count;
-function counter(){
-    count++;
-  }
 
   function povratak() {
     window.location.pathname = "stranica/naslovna.php";
