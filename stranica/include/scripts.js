@@ -1,6 +1,10 @@
 function login() {
   window.location.pathname = "Ljekarne-Hauska/stranica/login.php";
 }
+
+function odjava() {
+  window.location.pathname = "Ljekarne-Hauska/stranica/odjava.php";
+}
 // Get the modal
 var modal3 = document.getElementById("myModal3");
 

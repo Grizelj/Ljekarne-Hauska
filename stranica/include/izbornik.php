@@ -16,6 +16,9 @@
         <div class="text-end">
           <button type="button" class="btn btn-outline-light me-2" id="loginBtn" onclick="login()">Login</button>
         </div>
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2" id="loginBtn" onclick="odjava()">Odjava</button>
+        </div>
       </div>
     </div>
   </header>

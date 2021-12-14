@@ -1,4 +1,5 @@
 <!doctype html>
+<?php session_start(); ?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -30,7 +31,34 @@
   </head>
   <body class="text-center"> 
         <main class="form-signin">
-        <form>
+        <?php 
+          include "spoj.php";
+          $msg='';
+
+              if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])){
+                  $sql="SELECT * FROM zaposlenik";
+                  $q=mysqli_query($conn,$sql);
+
+                  while($redak=mysqli_fetch_array($q,MYSQLI_ASSOC)){
+                      if($_POST['email'] == $redak["email"] && $_POST['password'] == $redak['lozinka']) {
+                          $_SESSION['aktivan'] = true;
+                          $_SESSION['timeout'] = time();
+                          $_SESSION['email'] = $_POST['email'];
+                          $_SESSION['ime'] = $redak['ime'];
+                          $_SESSION['prezime'] = $redak['prezime'];
+                          $_SESSION['uloga'] = $redak['uloga'];
+                          if($redak['uloga']=="admin")
+                              header("Location: nadzornaPloca.php");
+                          else
+                              header("Location: naslovna.php");
+                      }else {
+                          $msg='Krivi email ili lozinka';
+                      }
+                  }
+              }
+        ?>
+        <form action="" method="post">
+          <h4><?php echo $msg; ?></h4>
           <br>
           <br>
           <br>
@@ -46,7 +74,7 @@
             <label for="floatingPassword">Lozinka</label>
             </div>
             <div class="form-floating" id="formFloating">
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>      
+            <button class="w-100 btn btn-lg btn-primary" type="submit" name="login">Sign in</button>      
             <input type="button" class="w-100 btn btn-lg btn-secondary" onclick="location.href='naslovna.php'" value="Povratak" />    
             </div>  
             
