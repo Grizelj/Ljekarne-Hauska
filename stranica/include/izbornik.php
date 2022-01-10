@@ -12,13 +12,21 @@
           <li><a href="ispis.php" class="nav-link px-2 text-white">Ispis lijekova</a></li> 
           <li><a href="nadzornaPloca.php" class="nav-link px-2 text-white">Nadzorna ploča</a></li>        
         </ul>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" id="loginBtn" onclick="login()">Login</button>
+        <?php
+         if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
+          echo "<div class='text-end'>";
+          echo "<h4>Dobro došao" . $_SESSION['ime'], $_SESSION['prezime'] . "</h4>";
+          echo "</div>";
+        }else{
+        
+        echo "<div class='text-end'>
+          <button type='button' class='btn btn-outline-light me-2' id='loginBtn' onclick='login()'>Login</button>
         </div>
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" id="loginBtn" onclick="odjava()">Odjava</button>
-        </div>
+        <div class='text-end'>
+          <button type='button' class='btn btn-outline-light me-2' id='loginBtn' onclick='odjava()'>Odjava</button>
+        </div>";
+        }
+        ?>    
       </div>
     </div>
   </header>

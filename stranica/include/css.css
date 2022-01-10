@@ -20,6 +20,37 @@ table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
 
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+$bootstrap-lg: 992px;
+$bootstrap-xl: 1200px;
+
+#gallery {
+  img {
+    height: 75vw;
+    object-fit: cover;
+    
+    @media (min-width: $bootstrap-sm) {
+      height: 35vw;
+    }
+    
+    @media (min-width: $bootstrap-lg) {
+      height: 18vw;
+    }
+  }
+}
+
+.carousel-item {
+  img {
+    height: 60vw;
+    object-fit: cover;
+    
+    @media (min-width: $bootstrap-sm) {
+      height: 350px;
+    }
+  }
+}
+
 .website-counter {
   display: flex;
   justify-content: center;
@@ -201,4 +232,9 @@ img {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
+}
+
+#pregled{
+  text-align: center;
+  align-items: center;
 }

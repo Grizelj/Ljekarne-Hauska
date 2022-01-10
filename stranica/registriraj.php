@@ -13,13 +13,14 @@
     ?>
     <?php
     
-    $sql = "INSERT INTO korisnici(ime, prezime, email, lozinka, uloga) VALUES('$_POST[ime]','$_POST[prezime]','$_POST[email]','$_POST[lozinka]', 'zaposlenik')";
+    $sql = "INSERT INTO zaposlenik(ime, prezime, email, lozinka, uloga) VALUES('$_POST[ime]','$_POST[prezime]','$_POST[email]','$_POST[lozinka]', 'zaposlenik')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Zaposlenik je uspješno unešen.";
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
+      header("Location: nadzornaPloca.php");
     ?>
 
     <br>
