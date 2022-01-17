@@ -55,7 +55,7 @@
               <p>Sv.L.B.Mandića 206, 31000 Osijek</p>
               <div class="mapouter">
                 <div class="gmap_canvas">
-                <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=sv.l.b.mandi%C4%87a,osjiek&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>    
+                <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Ul.%20Svetog%20Leopolda%20Bogdana%20Mandi%C4%87a%20206,%2031000,%20Osijek&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>    
                 </div>
               </div>
             </div>
