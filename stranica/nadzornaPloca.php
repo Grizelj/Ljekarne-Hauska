@@ -24,7 +24,8 @@
         <p class="btn btn-secondary" id="registerForm">Registriraj sada! &raquo;</p>
       </div>
       <div class="col-lg-4" style="text-align: center;">
-        <h2 onload="setCount()">Visitor counter: <span id="counter"></span></h2>
+        <h2>Dodaj novi lijek!</h2>
+        <p class="btn btn-secondary" id="registerFormLijek">Dodaj! &raquo;</p>
       </div>
       <div class="col-lg-4" style="text-align: center;">
         <h2>Pregled zaposlenika</h2>
@@ -44,7 +45,7 @@
 
           <th>Email</th>
 
-          <th></th>
+          <th>Akcija</th>
 
           </tr>";
         while ($redak = mysqli_fetch_array($result)) {
@@ -59,7 +60,11 @@
 
           echo "<td>" . $redak['email'] . "</td>";
 
-          echo "<td>" . "delete" . "</td>";
+          echo "<td>" . "<a href='brisanje.php?id={$redak['id']}'>X</a>" .
+                        "<strong> / </strong>" .
+                        "<a href='update.php?id={$redak['id']}'>Update</a>" . 
+        
+          "</td>";
 
           echo "</tr>";
         }
@@ -90,19 +95,51 @@
       <form method="post" action="registriraj.php">
         <h1>Registracija</h1>
         <div class="registracijskaForma">
-          <input type="text" placeholder="ime" name="ime">
+          <input type="text" placeholder="ime" name="ime" required>
         </div>
         <div class="registracijskaForma">
-          <input type="text" placeholder="prezime" name="prezime">
+          <input type="text" placeholder="prezime" name="prezime" required>
         </div>
         <div class="registracijskaForma">
-          <input type="text" placeholder="email" name="email">
+          <input type="text" placeholder="email" name="email" required>
         </div>
         <div class="registracijskaForma">
-          <input type="password" placeholder="Lozinka" name="lozinka">
+          <input type="password" placeholder="Lozinka" name="lozinka" required>
         </div>
         <div>
           <button class="btn btn-secondary" type="submit" name="register" id="reg_btn">Registriraj!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- The Modal -->
+  <div id="myModal4" class="modal4">
+    <!-- Modal content -->
+    <div class="modalRegister">
+      <span class="close4">&times;</span>
+      <form method="post" action="registrirajLijek.php">
+        <h1>Novi lijek!</h1>
+        <div class="registracijskaForma">
+          <input type="text" placeholder="ime" name="ime" required>
+        </div>
+        
+        <div class="registracijskaForma">
+          <input type="text" placeholder="cijena" name="cijena" required>
+        </div>
+        <div class="registracijskaForma">
+          <input type="text" placeholder="kolicina" name="kolicina" required>
+        </div>
+        <div class="registracijskaForma">
+          <input type="text" placeholder="stanje1" name="stanje1" required>
+        </div>
+        <div class="registracijskaForma">
+          <input type="text" placeholder="stanje2" name="stanje2" required>
+        </div>
+        <div class="registracijskaForma">
+          <textarea name="opis" placeholder="opis lijeka..." cols="28" rows="6"></textarea>
+        </div>
+        <div>
+          <button class="btn btn-secondary" type="submit" name="register" id="reg_btn_lijek">Dodaj novi lijek!</button>
         </div>
       </form>
     </div>

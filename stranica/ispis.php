@@ -31,9 +31,11 @@
       </th>
       <th class='th-sm'>Količina
       </th>
-      <th class='th-sm'>Stanje 1
+      <th class='th-sm'>Stanje1
       </th>
-      <th class='th-sm'>Stanje 2
+      <th class='th-sm'>Stanje2
+      </th>
+      <th class='th-sm'>Akcija
       </th>
     </tr>
   </thead>";
@@ -54,6 +56,12 @@
     echo "<td>" . $redak['stanje1'] . "</td>";
 
     echo "<td>" . $redak['stanje2'] . "</td>";
+
+    echo "<td>" . "<a href='brisanjeLijek.php?id={$redak['id']}'>X</a>" .
+    "<strong> / </strong>" .
+    "<a href='updateLijek.php?id={$redak['id']}'>Update</a>" . 
+
+"</td>";
 
     echo "</tr>";
     echo "</tbody>";
