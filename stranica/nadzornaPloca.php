@@ -9,11 +9,11 @@
 <body>
 <?php
     include "spoj.php";
-    /*if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
+    if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
         
     }else{
         header("Location: login.php");
-    } */
+    } 
     ?>
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <?php include_once "include/izbornik.php" ?>
@@ -78,7 +78,7 @@
     <div class="container">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="naslovna.php" class="nav-link px-2 text-muted">Naslovna</a></li>
+      <li class="nav-item"><a href="profil.php" class="nav-link px-2 text-muted">Profil</a></li>
       <li class="nav-item"><a href="lijekovi.php" class="nav-link px-2 text-muted">Lijekovi</a></li>
       <li class="nav-item"><a href="ispis.php" class="nav-link px-2 text-muted">Ispis lijekova</a></li>
     </ul>

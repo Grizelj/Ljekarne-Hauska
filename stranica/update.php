@@ -1,11 +1,21 @@
 <?php 
         include "spoj.php";
-        if(count($_POST)>0){
-        mysqli_query($conn,"UPDATE zaposlenik set id=" . $_GET["id"] . ", ime=" . $_POST["ime"] . ", prezime=" . $_POST["prezime"] . ", 
-        email=" . $_POST["email"] . " where id=" . $_GET["id"]);
-        }
-        $result = mysqli_query($conn,"SELECT * from zaposlenik where id=" . $_GET["id"]);
+        $id = $_GET['id'];
+        $result = mysqli_query($conn,"SELECT * from zaposlenik where id='$id'");
         $redak=mysqli_fetch_array($result);
+
+        if(isset($_POST["submit"])){
+        $squl = "UPDATE zaposlenik set id='$_GET[id]', ime='$_POST[ime]', prezime='$_POST[prezime]', 
+        email='$_POST[email]' where id='$id'";
+        if(mysqli_query($conn,$squl)){
+            header("Location: nadzornaPloca.php");
+        }else{
+            echo mysqli_error($conn);
+        }
+        
+    }
+        
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">

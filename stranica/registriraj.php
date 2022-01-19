@@ -12,8 +12,10 @@
     include "spoj.php";
     ?>
     <?php
+
+    $hash_pw = md5($_POST['lozinka']);
     
-    $sql = "INSERT INTO zaposlenik(ime, prezime, email, lozinka, uloga) VALUES('$_POST[ime]','$_POST[prezime]','$_POST[email]','$_POST[lozinka]', 'zaposlenik')";
+    $sql = "INSERT INTO zaposlenik(ime, prezime, email, lozinka, uloga) VALUES('$_POST[ime]','$_POST[prezime]','$_POST[email]','$hash_pw', 'zaposlenik')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Zaposlenik je uspješno unešen.";
@@ -24,6 +26,6 @@
     ?>
 
     <br>
-    <a href="naslovna.php">Naslovna</a>
+    <a href="profil.php">Naslovna</a>
 </body>
 </html>

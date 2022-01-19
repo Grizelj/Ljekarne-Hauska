@@ -20,18 +20,7 @@
 
     <div class="row">
       <div class="col-lg-3" style="text-align: center;">
-        <h2>Notes</h2>
-        <button class="btn btn-outline-dark me-2" id="newNote">New Note</button>
-        <form style="display: none;" name="notesForm" id="notesForm">
-          <input class="form-control" type="text" name="pastorName" placeholder="Pastor Name" />
-          <textarea class="form-control" style="width:100%;" maxlength="500" name="notes" id="notes" cols="50" rows="10" placeholder="Notes">
-            </textarea>
-        </form>
-        <br />
-        <div style="display: none;" class="btn btn-secondary" id="button">
-          Add!
-        </div><br />
-        <div class="list"></div>
+         
       </div>
       <div class="col-lg-6" style="height: 10%">
         <h2 style="text-align:center">Galerija lijekova</h2>
@@ -178,6 +167,31 @@
         </div>
       </div>
     </div>
+    <script>
+        var ckEditorID;
+
+                ckEditorID = 'notes';
+
+                function fnConsolePrint() {
+                  //console.log($('#' + ckEditorID).val());
+                  console.log(CKEDITOR.instances[ckEditorID].getData());
+                }
+                CKEDITOR.config.forcePasteAsPlainText = true;
+                CKEDITOR.replace(ckEditorID, {
+                  toolbar: [{
+                    items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']
+                  }, {
+                    items: ['Format']
+                  }, {
+                    items: ['Link', 'Unlink']
+                  }, {
+                    items: ['Indent', 'Outdent', '-', 'BulletedList', 'NumberedList']
+                  }, {
+                    items: ['Undo', 'Redo']
+                  }]
+                })
+    </script>
 </body>
+
 
 </html>

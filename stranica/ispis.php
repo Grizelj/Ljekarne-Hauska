@@ -2,45 +2,36 @@
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
+    <?php include_once "include/head.php"?>
+    <script src="include/ispisLijek.js"></script>
+  </head>
+  <body>  
   <?php
     include "spoj.php";
-
     ?>
-    <?php include_once "include/head.php"?>
-  </head>
-  <body>
-  
-    
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <?php include_once "include/izbornik.php" ?>
-  
-
-  <?php
-  $result = mysqli_query($conn, "SELECT * FROM lijek");
-  echo "
-  <table id='dtBasicExample' class='table table-striped table-bordered table-sm' cellspacing='0' width='100%'>
+  <table id="example" class="table table-striped" style="width:100%">
   <thead>
-    <tr>
-      <th class='th-sm'>ID
-      </th>
-      <th class='th-sm'>Lijek
-      </th>
-      <th class='th-sm'>Opis
-      </th>
-      <th class='th-sm'>Cijena
-      </th>
-      <th class='th-sm'>Količina
-      </th>
-      <th class='th-sm'>Stanje1
-      </th>
-      <th class='th-sm'>Stanje2
-      </th>
-      <th class='th-sm'>Akcija
-      </th>
-    </tr>
-  </thead>";
+            <tr>
+                <th>ID</th>
+                <th>Lijek</th>
+                <th>Opis</th>
+                <th>Cijena</th>
+                <th>Količina</th>
+                <th>Stanje1</th>
+                <th>Stanje2</th>
+                <?php
+                if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")){ 
+                  echo '<th>Akcija</th>';
+                }
+                ?>
+            </tr>
+  </thead>
+  <tbody>
+    <?php
+  $result = mysqli_query($conn, "SELECT * FROM lijek");
   while  ($redak = mysqli_fetch_array($result)) {
-    echo "<tbody>";
     echo "<tr>";
 
     echo "<td>" . $redak['id'] . "</td>";
@@ -57,18 +48,19 @@
 
     echo "<td>" . $redak['stanje2'] . "</td>";
 
+    if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")){ 
     echo "<td>" . "<a href='brisanjeLijek.php?id={$redak['id']}'>X</a>" .
     "<strong> / </strong>" .
-    "<a href='updateLijek.php?id={$redak['id']}'>Update</a>" . 
-
-"</td>";
-
+    "<a href='updateLijek.php?id={$redak['id']}'>Update</a>" . "</td>";
     echo "</tr>";
-    echo "</tbody>";
+    }
   }
-  echo "</table>"
 ?>
-  
+
+  </tbody>
+  </table>
+</div>
+<div>
   <?php include_once "include/footer.php"?>
 </div>  
   </body>

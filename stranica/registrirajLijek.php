@@ -24,6 +24,6 @@
     ?>
 
     <br>
-    <a href="naslovna.php">Naslovna</a>
+    <a href="profil.php">Naslovna</a>
 </body>
 </html>

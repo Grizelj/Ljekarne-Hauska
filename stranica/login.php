@@ -40,7 +40,7 @@
                   $q=mysqli_query($conn,$sql);
 
                   while($redak=mysqli_fetch_array($q,MYSQLI_ASSOC)){
-                      if($_POST['email'] == $redak["email"] && $_POST['password'] == $redak['lozinka']) {
+                      if($_POST['email'] == $redak["email"] && md5($_POST['password']) == $redak['lozinka']) {
                           $_SESSION['aktivan'] = true;
                           $_SESSION['timeout'] = time();
                           $_SESSION['email'] = $_POST['email'];
@@ -50,7 +50,7 @@
                           if($redak['uloga']=="admin")
                               header("Location: nadzornaPloca.php");
                           else
-                              header("Location: naslovna.php");
+                              header("Location: profil.php");
                       }else {
                           $msg='Krivi email ili lozinka';
                       }
@@ -65,17 +65,17 @@
             <img class="mb-4" src="img/Logo.png" alt="" width="100" height="70">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <div class="form-floating" id="formFloating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required autofocus>
+            <div class="form-floating" id="formFloating" id="loggin">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required autofocus>
             <label for="floatingInput">Email address</label>
             </div>
-            <div class="form-floating" id="formFloating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+            <div class="form-floating" id="formFloating" id="loggin">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
             <label for="floatingPassword">Lozinka</label>
             </div>
             <div class="form-floating" id="formFloating">
-            <button class="w-100 btn btn-lg btn-primary" type="submit" name="login" value="login">Sign in</button>      
-            <input type="button" class="w-100 btn btn-lg btn-secondary" onclick="location.href='naslovna.php'" value="Povratak" />    
+            <button class="w-50 btn btn-lg btn-primary" type="submit" name="login" value="login" id="buton">Sign in</button>     
+            <input type="button" class="w-50 btn btn-lg btn-secondary" id="buton" onclick="location.href='../index.php'" value="Povratak" />    
             </div>  
             
             <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y")?> Ljekarne Hauska</p>

@@ -1,11 +1,15 @@
 <?php 
         include "spoj.php";
-        if(count($_POST)>0){
-        mysqli_query($conn,"UPDATE lijek set id=" . $_GET["id"] . ", ime=" . $_POST["ime"] . ", opis=" . $_POST["opis"] . ", 
-        cijena=" . $_POST["cijena"] . " where id=" . $_GET["id"]);
-        }
-        $result = mysqli_query($conn,"SELECT * from lijek where id=" . $_GET["id"]);
+        $id = $_GET['id'];
+        $result = mysqli_query($conn,"SELECT * from lijek where id='$id'");
         $redak=mysqli_fetch_array($result);
+
+        if(isset($_POST["submit"])){
+            if(mysqli_query($conn,"UPDATE lijek set id='$_GET[id]', ime='$_POST[ime]', opis='$_POST[opis]', 
+            cijena='$_POST[cijena]' where id='$_GET[id]'")){
+                header("Location: ispis.php");
+            }
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
