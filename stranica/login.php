@@ -47,6 +47,7 @@
                           $_SESSION['ime'] = $redak['ime'];
                           $_SESSION['prezime'] = $redak['prezime'];
                           $_SESSION['uloga'] = $redak['uloga'];
+                          $_SESSION['lozinka'] = $_POST['password'];
                           if($redak['uloga']=="admin")
                               header("Location: nadzornaPloca.php");
                           else

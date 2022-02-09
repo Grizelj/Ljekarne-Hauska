@@ -8,7 +8,11 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="../index.php" class="nav-link px-2 text-white">Ljekarne Hauska</a></li>
           <?php if(isset($_SESSION['aktivan']) && $_SESSION['aktivan']) {
-            echo '<li><a href="profil.php" class="nav-link px-2 text-white">Profil</a></li>';
+            if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")) {
+            echo '<li><a href="profilAdmin.php" class="nav-link px-2 text-white">Profil</a></li>';
+            }else{
+              echo '<li><a href="profil.php" class="nav-link px-2 text-white">Profil</a></li>';
+            }
             echo '<li><a href="ispis.php" class="nav-link px-2 text-white">Ispis lijekova</a></li>';
              if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")) 
             echo '<li><a href="nadzornaPloca.php" class="nav-link px-2 text-white">Nadzorna ploča</a></li> ';

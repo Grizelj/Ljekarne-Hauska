@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 <?php
     include "spoj.php";
     if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
@@ -18,16 +19,55 @@
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <?php include_once "include/izbornik.php" ?>
     
-    <div class="row">
-      <div class="col-lg-4" style="text-align: center;">
-        <h2>Registriraj novog zaposlenika!</h2>
-        <p class="btn btn-secondary" id="registerForm">Registriraj sada! &raquo;</p>
-      </div>
-      <div class="col-lg-4" style="text-align: center;">
+     <div class="row">
+      <div class="col-lg-7" style="text-align: center;" id="divlijek">
         <h2>Dodaj novi lijek!</h2>
         <p class="btn btn-secondary" id="registerFormLijek">Dodaj! &raquo;</p>
+        </div> 
+        <div class="col-lg-5">
+        <?php 
+          $query1 = "SELECT stanje1, count(*) as number FROM lijek where stanje1 = true"; 
+          $query2 = "SELECT stanje2, count(*) as number FROM lijek where stanje2 = true";   
+          $result1 = mysqli_query($conn, $query1); 
+          $result2 = mysqli_query($conn, $query2); 
+          ?>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
+                  <script type="text/javascript">  
+                  google.charts.load('current', {'packages':['corechart']});  
+                  google.charts.setOnLoadCallback(drawChart);  
+                  function drawChart()  
+                  {  
+                        var data = google.visualization.arrayToDataTable([  
+                                  ['Stanje', 'Number'],  
+                                  <?php  
+                                  while($row = mysqli_fetch_array($result1))  
+                                  {  
+                                      echo "['Ljekarnička jedinica I', ".$row["number"]."],";  
+                                  }
+                                  while($row = mysqli_fetch_array($result2))  
+                                  {  
+                                      echo "['Ljekarnička jedinica II', ".$row["number"]."],";  
+                                  }   
+                                  ?>  
+                            ]);  
+                        var options = {  
+                              title: 'Stanje lijekova u ljekarničkim jedinicama',  
+                              //is3D:true,  
+                              pieHole: 0.3  
+                            };  
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
+                        chart.draw(data, options);  
+                  }  
+                  </script>  
+        <br /><br />  
+           <div style="width:550px;">   
+                <div id="piechart" style="width: 650px; height: 400px;"></div>  
+           
+           </div> 
       </div>
-      <div class="col-lg-4" style="text-align: center;">
+      <div class="row">
+        <div class="col-lg-2"></div>
+      <div class="col-lg-8" style="text-align: center;">
         <h2>Pregled zaposlenika</h2>
         <br>
         <table id="pregled">
@@ -71,14 +111,22 @@
         ?>
         </table>
       </div>
+      </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+      <div class="col-lg-8" style="text-align: center;">
+        <h2>Registriraj novog zaposlenika!</h2>
+        <p class="btn btn-secondary" id="registerForm">Registriraj sada! &raquo;</p>
+      </div>
+     </div>
   <div class="row">
     <div class="col-lg-12" style="text-align: center;">
     <div class="container">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="profil.php" class="nav-link px-2 text-muted">Profil</a></li>
+      <li class="nav-item"><a href="profilAdmin.php" class="nav-link px-2 text-muted">Profil</a></li>
       <li class="nav-item"><a href="lijekovi.php" class="nav-link px-2 text-muted">Lijekovi</a></li>
       <li class="nav-item"><a href="ispis.php" class="nav-link px-2 text-muted">Ispis lijekova</a></li>
     </ul>

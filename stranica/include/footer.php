@@ -1,11 +1,17 @@
 <div class="container">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="profil.php" class="nav-link px-2 text-muted">Profil</a></li>
+      <?php
+          if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")) {
+            echo '<li><a href="profilAdmin.php" class="nav-link px-2 text-muted">Profil</a></li>';
+            }else{
+              echo '<li><a href="profil.php" class="nav-link px-2 text-muted">Profil</a></li>';
+            }
+            ?>
       <li class="nav-item"><a href="ispis.php" class="nav-link px-2 text-muted">Ispis lijekova</a></li>
       <?php
       if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")) {
-            echo '<li><a href="nadzornaPloca.php" class="nav-link px-2 text-white">Nadzorna ploča</a></li> ';
+            echo '<li><a href="nadzornaPloca.php" class="nav-link px-2 text-muted">Nadzorna ploča</a></li> ';
           }
       ?> 
     </ul>

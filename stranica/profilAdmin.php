@@ -8,7 +8,7 @@
   
   <?php
     include "spoj.php";
-    if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
+    if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")) {
         
     }else{
         header("Location: login.php");
