@@ -49,9 +49,9 @@
     echo "<td>" . $redak['stanje2'] . "</td>";
 
     if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")){ 
-    echo "<td>" . "<a href='brisanjeLijek.php?id={$redak['id']}'>X</a>" .
+    echo "<td>" . "<a href='brisanjeLijek.php?id={$redak['id']}' class='confirmation'><img src='img/x-square.svg'></a>" .
     "<strong> / </strong>" .
-    "<a href='updateLijek.php?id={$redak['id']}'>Update</a>" . "</td>";
+    "<a href='updateLijek.php?id={$redak['id']}'><img src='img/pencil-square.svg'></a>" . "</td>";
     echo "</tr>";
     }
   }

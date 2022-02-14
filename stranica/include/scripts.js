@@ -69,3 +69,7 @@ $(document).ready(function () {
   function povratak() {
     window.location.pathname = "stranica/naslovna.php";
   }
+
+$('.confirmation').on('click', function () {
+    return confirm('Are you sure?');
+});

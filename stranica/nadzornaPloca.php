@@ -65,7 +65,7 @@
            
            </div> 
       </div>
-      <div class="row">
+      <div class="row" style="margin-top: 100px;">
         <div class="col-lg-2"></div>
       <div class="col-lg-8" style="text-align: center;">
         <h2>Pregled zaposlenika</h2>
@@ -100,9 +100,9 @@
 
           echo "<td>" . $redak['email'] . "</td>";
 
-          echo "<td>" . "<a href='brisanje.php?id={$redak['id']}'>X</a>" .
+          echo "<td>" . "<a href='brisanje.php?id={$redak['id']}' class='confirmation'><img src='img/x-square.svg'></a>" .
                         "<strong> / </strong>" .
-                        "<a href='update.php?id={$redak['id']}'>Update</a>" . 
+                        "<a href='update.php?id={$redak['id']}'><img src='img/pencil-square.svg'></a>" . 
         
           "</td>";
 
@@ -114,7 +114,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="margin-top: 100px;">
     <div class="col-lg-2"></div>
       <div class="col-lg-8" style="text-align: center;">
         <h2>Registriraj novog zaposlenika!</h2>
@@ -176,15 +176,17 @@
         </div>
         <div class="registracijskaForma">
           <input type="text" placeholder="kolicina" name="kolicina" required>
+        </div>       
+        <div class="registracijskaForma">
+          <textarea name="opis" placeholder="opis lijeka..." cols="23" rows="6"></textarea>
         </div>
         <div class="registracijskaForma">
-          <input type="text" placeholder="stanje1" name="stanje1" required>
+          <label for="stanje1">Stanje 1</label>
+          <input type="checkbox" id="stanje1" value="1" name="stanje1">
         </div>
         <div class="registracijskaForma">
-          <input type="text" placeholder="stanje2" name="stanje2" required>
-        </div>
-        <div class="registracijskaForma">
-          <textarea name="opis" placeholder="opis lijeka..." cols="28" rows="6"></textarea>
+        <label for="stanje2">Stanje 2</label>
+          <input type="checkbox" id="stanje2" value="1" name="stanje2">
         </div>
         <div>
           <button class="btn btn-secondary" type="submit" name="register" id="reg_btn_lijek">Dodaj novi lijek!</button>
