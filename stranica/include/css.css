@@ -179,3 +179,7 @@ $bootstrap-xl: 1200px;
 #divlijek{
   margin-top: 7%;
 }
+
+.span {
+  width: 200px;
+}

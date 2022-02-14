@@ -8,6 +8,11 @@
   <body>  
   <?php
     include "spoj.php";
+    if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
+        
+    }else{
+        header("Location: login.php");
+    } 
     ?>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <?php include_once "include/izbornik.php" ?>

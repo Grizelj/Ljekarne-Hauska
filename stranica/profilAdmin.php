@@ -8,7 +8,7 @@
   
   <?php
     include "spoj.php";
-    if(isset($_SESSION['uloga']) && ($_SESSION['uloga']=="admin")) {
+    if(!empty($_SESSION['aktivan']) && $_SESSION['aktivan']){
         
     }else{
         header("Location: login.php");
@@ -20,10 +20,15 @@
   <?php include_once "include/izbornik.php" ?>
 
   <div class="row">
-      <div class="col-lg-4" style="text-align: center;">
-          <h2>
+    <div class="row"><div class="col-lg-12" style="text-align:center; padding-top: 20px;">
+    <?php        
+          echo "<h1> " . $_SESSION['ime'] . " " . $_SESSION['prezime'] . "</h1>";
+          ?>
+    </div></div>
+    <div class="col-lg-2"></div>
+      <div class="col-lg-3" style="text-align: center; font-size:130%; padding-top: 40px;">
+          
           <?php        
-          echo "<h2> " . $_SESSION['ime'] . " " . $_SESSION['prezime'] . "</h2>";
           echo "<div class='text-start' id='profil'>";
           echo "<h4>Ime:</h4>" . $_SESSION['ime'];
           echo "</div>";
@@ -40,13 +45,13 @@
           echo "<h4>Email:</h4>" . $_SESSION['email'];
           echo "</div>";
           echo "<div class='text-start' id='pwd'>";
-          echo "<h4>Lozinka:</h4>" . "<span class='pwdhidden'>******</span>";
+          echo "<h4>Lozinka:</h4>" . "<span class='pwdhidden'>***********</span>";
           echo "<span class='pwdshow'>" . $_SESSION['lozinka'] . "</span>";
           echo "</div>";
           ?>
-          </h2>
+          
       </div>
-      <div class="col-lg-8" style="text-align: center;">
+      <div class="col-lg-7" style="text-align: center;">
           <img src="img/profile.png" alt="profil">
       </div>
   </div>  
