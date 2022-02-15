@@ -56,6 +56,6 @@
       </div>
   </div>  
   <?php include_once "include/footer.php"?>
-</div>  
+</div> 
   </body>
 </html>

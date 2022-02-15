@@ -5,8 +5,8 @@
         $redak=mysqli_fetch_array($result);
 
         if(isset($_POST["submit"])){
-            if(mysqli_query($conn,"UPDATE lijek set id='$_GET[id]', ime='$_POST[ime]', opis='$_POST[opis]', 
-            cijena='$_POST[cijena]' where id='$_GET[id]'")){
+            if(mysqli_query($conn,"UPDATE lijek set id='$_GET[id]', ime='$_POST[ime]', opis='$_POST[opis]', kolicina='$_POST[kolicina]',
+            cijena='$_POST[cijena]', stanje1='$_POST[stanje1]', stanje2='$_POST[stanje2]' where id='$_GET[id]'")){
                 header("Location: ispis.php");
             }
         }
@@ -35,11 +35,11 @@
             </div>
             <div class="registracijskaForma">
                 <label for="stanje1">Stanje 1</label>
-                <input type="checkbox" id="stanje1" value="<?php echo $redak['stanje1'] ?>" name="stanje1">
+                <input type="checkbox" id="stanje1" value="1" name="stanje1" <?php if($redak['stanje1'] == 1) { echo 'checked'; }?>>
             </div>
             <div class="registracijskaForma">
                 <label for="stanje2">Stanje 2</label>
-                <input type="checkbox" id="stanje2" value="<?php echo $redak['stanje2'] ?>" name="stanje2">
+                <input type="checkbox" id="stanje2" value="1" name="stanje2" <?php if($redak['stanje2'] == 1) { echo 'checked'; }?>>
             </div>       
             <div>
                 <button class="btn btn-secondary" type="submit" name="submit" id="upd_btn">Promjeni lijek!</button>

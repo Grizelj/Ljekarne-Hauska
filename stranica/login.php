@@ -11,6 +11,8 @@
     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="include/css.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <meta name="theme-color" content="#7952b3">
     <style>
       .bd-placeholder-img {
@@ -71,9 +73,10 @@
             <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating" id="formFloating" id="loggin">
-            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
-            <label for="floatingPassword">Lozinka</label>
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required><button type="button" id="showPassword" name="showPassword" class="btn btn-outline-dark">Show Password</button>
+            <label for="floatingPassword">Lozinka</label>     
             </div>
+            
             <div class="form-floating" id="formFloating">
             <button class="w-50 btn btn-lg btn-primary" type="submit" name="login" value="login" id="buton">Sign in</button>     
             <input type="button" class="w-50 btn btn-lg btn-secondary" id="buton" onclick="location.href='../index.php'" value="Povratak" />    
@@ -82,5 +85,30 @@
             <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y")?> Ljekarne Hauska</p>
         </form>
         </main> 
+        <script>
+          $(document).ready(function(){  
+            $('#showPassword').on('click', function(){  
+              var passwordField = $('#floatingPassword');  
+              var passwordFieldType = passwordField.attr('type');
+              if(passwordField.val() != '')
+              {
+              if(passwordFieldType == 'password')  
+              {  
+                passwordField.attr('type', 'text');  
+                $(this).text('Hide Password');  
+              }  
+              else  
+              {  
+                passwordField.attr('type', 'password');  
+                $(this).text('Show Password');  
+              }
+              }
+              else
+              {
+              alert("Please Enter Password");
+              }
+            });  
+          });  
+        </script>
   </body>
 </html>
